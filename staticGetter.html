@@ -1,0 +1,21 @@
+<html><head><style>#one:hover{color:blue;}</style><title>Getting cosy with static getter language in the class syntax of a function/constructor</title></head><body><h1 id="one" style="cursor:pointer;" onclick="attachQuoteAndConfirmation()">Before-text</h1>
+
+<script type="text/javascript">class fx{static get text(){return ("After-text");}static get quotes(){return ((()=>{const x=document.createElement("p"); x.innerHTML="Cooking is a philosophy. It is not a recipe. Marco Pierre White thinks that <q>self-discovery is the greates achievement in life, because once you discover yourself and accept what you are, then you can fulfill your true potential and be happy.</q>"; document.body.appendChild(x); x.style.color="gray"; return("Created and attached the quotes node.");})());}} 
+
+const struct=new fx(); struct.hi="hello world";
+console.log(struct,struct.prototype,struct.__proto__); 
+
+const attachQuoteAndConfirmation=()=>{alert(struct.hi);
+const text=prompt("Say some text: "); const quotes=prompt("Say some quotes: ");
+console.log(fx.text,fx.quotes);
+
+document.getElementById("one").innerHTML=/*fx.text.toString().toUpperCase()*/text?text.toString().toUpperCase():fx.text.toString().toUpperCase(); document.getElementById("one").style.marginLeft="223px"; const fee=document.createElement("h6"); fee.innerHTML=/*fx.quotes.toString()*/quotes?quotes.toString().toUpperCase():fx.quotes.toString(); document.body.appendChild(fee);
+
+ };
+
+
+
+ </script>
+
+<!-- mongodb fetch call and store in a schmea of text and quotes. everytime the h1 is clicked, there will be a prompt and appeding, which can be saved and on every reload=recompilation=re-request, the html string will be returned to a get-fetch call. -->
+</body></html>
