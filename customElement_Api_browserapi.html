@@ -1,0 +1,17 @@
+<html><head><script>
+	class Hi extends HTMLElement{
+		constructor(){super();
+			const x=this.attachShadow({mode:'open'});
+			const y=document.createElement("span");
+			y.innerHTML="Gorder Ramsey said, <q>I don't like looking back. I am always constantly looking forward. I am not one to sit and cry over spilt milk. I am looking for the next cow.</q>.";
+			const z=document.createElement('style');
+			console.log(z.isConnected,"style is connected?");
+			z.textContent=`*{padding:9;color:blue;border-bottom:4px solid brown;}`;
+			x.appendChild(z); console.log(z.isConnected);
+			x.appendChild(y); console.log("y connected?",y.isConnected);
+			
+		}
+	}
+	customElements.define("hi-hi",Hi);
+
+</script><title>Custom element script should come in the head because of synchronous execution.</title></head><body><hi-hi></hi-hi><hr /><div style="width=44%; margin:12px; padding:2px; border:3px solid green;"> This is a div text <hr /><hi-hi></hi-hi></div></body></html>
